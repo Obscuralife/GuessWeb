@@ -6,13 +6,9 @@ namespace DataLayer.Model
 {
     public class User
     {
-        public string FirstName { get; private set; }
-        public string SeconName { get; private set; }
-
-        public User(string firstName, string secondName)
-        {
-            this.FirstName = firstName;
-            this.SeconName = secondName;
-        }
+        public long Id { get; private set; }
+        public string Name { get;  set; }
+        public string Password { get;  set; }
+        public ulong Score { get; set; }
     }
 }

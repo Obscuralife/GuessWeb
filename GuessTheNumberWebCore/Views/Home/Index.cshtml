@@ -1,8 +1,32 @@
-﻿@{
+﻿@using DataLayer.Model
+@model List<User>
+@{
     ViewData["Title"] = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div >
-    THis is Index
+<div>
+    <div>
+        @foreach(var user in Model)
+        {
+            <p>
+                Id: @user.Id; @Html.ActionLink(user.Name, "Profile", "Home", new { userId = user.Id })  
+            </p>
+        }
+        @using (Html.BeginForm("AddUser", "Home", FormMethod.Post))
+        {
+            <div>
+                <input id="Name" name="Name" placeholder="Enter the name"/>
+                <input id="Password" name="Password" type="password" placeholder="Enter the password"/>
+                <input type="submit" value="Create User"/>
+            </div>
+        }
+        @using (Html.BeginForm("RemoveUser", "Home", FormMethod.Post))
+        {
+            <div>
+                <input id="Id" name="Id" placeholder="Enter the Id"/>
+                <input type="submit" value="Remove User"/>
+            </div>
+        }
+    </div>
 </div>

@@ -1,0 +1,14 @@
+﻿@using DataLayer.Model
+@model User
+@{
+    ViewData["Title"] = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Profile</h2>
+
+<div>
+    <p>
+        ID: @Model.Id; Name: @Model.Name; Score: @Model.Score
+    </p>
+</div>

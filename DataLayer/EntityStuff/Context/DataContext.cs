@@ -7,9 +7,9 @@ using System.Text;
 
 namespace DataLayer.Context
 {
-    class DataContext : DbContext
+    public class DataContext : DbContext
     {
-        DbSet<UserAccount> userAccounts { get; set; }
+        public DbSet<User> Users { get; set; }
 
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
